@@ -10,7 +10,8 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "media.hornbach.de" },
       { protocol: "https", hostname: "shop0662.sfstatic.io" },
       { protocol: "https", hostname: "product-hub-prd.madeiramadeira.com.br" },
-      { protocol: "https", hostname: "static.wixstatic.com" }
+      { protocol: "https", hostname: "static.wixstatic.com" },
+      { protocol: "https", hostname: "raw.githubusercontent.com" }
     ]
   }
 };
