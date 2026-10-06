@@ -61,10 +61,6 @@ export default function Home() {
             <p className="mb-5 text-sm font-medium uppercase tracking-[.25em] text-white/55">Anápolis • Goiás</p>
             <h1 className="text-5xl font-black leading-[.92] tracking-[-.06em] sm:text-7xl lg:text-[7.5rem]">Cortinas e<br/><span className="text-white/35">persianas</span><br/>sob medida.</h1>
             <p className="mt-8 max-w-xl text-lg leading-7 text-white/60">Conforto, proteção solar e acabamento para transformar seu ambiente. Escolha sua solução e solicite um orçamento personalizado.</p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href={quote("um produto")} className="inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-500/80 px-6 py-3 font-bold text-white backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,.35),0_10px_35px_rgba(16,185,129,.2)] transition hover:bg-emerald-500">Solicitar orçamento <ArrowUpRight size={18}/></a>
-              <a href="#produtos" className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-6 py-3 font-semibold text-emerald-200 backdrop-blur-xl transition hover:bg-emerald-500/20">Ver produtos</a>
-            </div>
           </div>
         </div>
       </div>
