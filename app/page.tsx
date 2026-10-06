@@ -9,15 +9,15 @@ import ScrollBaseAnimation from "@/components/ui/scroll-text-marquee";
 const WHATSAPP = "5562993543196";
 
 const products = [
-  ["Motorização para cortina", "Automação para abrir, fechar e controlar suas cortinas com mais conforto.", "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=85"],
-  ["Persianas rolô", "Visual limpo, controle de luz e acabamento sob medida para qualquer ambiente.", "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1200&q=85"],
-  ["Romana", "Elegância e conforto com tecidos e caimento que valorizam o ambiente.", "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"],
-  ["Double Vision", "Faixas translúcidas e opacas para equilibrar privacidade e iluminação.", "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85"],
-  ["Cortinas tradicionais de tecido", "Soluções clássicas e sofisticadas para projetos residenciais e comerciais.", "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85"],
-  ["Toldos verticais", "Proteção solar e privacidade com instalação pensada para seu espaço.", "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85"],
-  ["Toldo vertical braço pivotante", "Proteção funcional com estrutura e abertura que se adaptam ao ambiente.", "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"],
-  ["Sun Sheer", "Leveza, proteção solar e acabamento contemporâneo.", "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"],
-  ["Persianas horizontais em alumínio", "Praticidade, resistência e controle preciso da entrada de luz.", "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1200&q=85"]
+  ["Motorização para cortina", "Automação para abrir, fechar e controlar suas cortinas com mais conforto.", "https://www.vanewijkzonwering.nl/wp-content/uploads/2021/04/Gordijnen-op-maat-bij-Van-Ewijk-Zonwering-in-Lelystad-Dronten-Swifterbant-en-Almere-06-800x535.jpg"],
+  ["Persianas rolô", "Visual limpo, controle de luz e acabamento sob medida para qualquer ambiente.", "https://3325.cdn.simplo7.net/static/3325/sku/por-cor-branco-cortina-rolo-branca-tecido-blackout-colecao-napoles-cor-white--p-1749843149174.jpg"],
+  ["Romana", "Elegância e conforto com tecidos e caimento que valorizam o ambiente.", "https://3325.cdn.simplo7.net/static/3325/sku/romana-tecido-blackout-cortina-romana-blackout-tecido-tj5661--p-1751291816283.jpg"],
+  ["Double Vision", "Faixas translúcidas e opacas para equilibrar privacidade e iluminação.", "https://images.tcdn.com.br/img/img_prod/1175294/persiana_rolo_double_vision_1_80m_x_2_60m_bege_bella_janela_6659_variacao_8323_3_59192d4c8f7e3df58db897b910178e85.jpg"],
+  ["Cortinas tradicionais de tecido", "Soluções clássicas e sofisticadas para projetos residenciais e comerciais.", "https://acdn-us.mitiendanube.com/stores/003/541/884/products/linho-natural-4-adae2f1b01bff2d03b17120553233821-1024-1024.webp"],
+  ["Toldos verticais", "Proteção solar e privacidade com instalação pensada para seu espaço.", "https://media.hornbach.de/mp/packshot/5f1df4b3-87da-4ac3-8d0c-88cf1720ee8d?size=400"],
+  ["Toldo vertical braço pivotante", "Proteção funcional com estrutura e abertura que se adaptam ao ambiente.", "https://shop0662.sfstatic.io/upload_dir/shop/markise-250-x-100-cm-sort-antracit-laeskaerm-laesejl-vertikalmarkise_2.jpg"],
+  ["Sun Sheer", "Leveza, proteção solar e acabamento contemporâneo.", "https://3325.cdn.simplo7.net/static/3325/sku/por-cor-off-white-cortina-rolo-off-white-tecido-tela-solar-colecao-screen-1-cor-white-p-1760731161939.jpg"],
+  ["Persianas horizontais em alumínio", "Praticidade, resistência e controle preciso da entrada de luz.", "https://product-hub-prd.madeiramadeira.com.br/241543530/images/0b4ac784-21cb-40f0-82b5-c81ea75f35306b7ed4ffff4c1747340302649.jpeg"]
 ] as const;
 
 const faqs = [
@@ -69,7 +69,7 @@ export default function Home() {
     <section className="border-y border-white/10 bg-white/[.03]">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
         <div><p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Por trás do resultado</p><h2 className="text-4xl font-black tracking-tight sm:text-6xl">Fábrica estruturada.<br/>Acabamento cuidadoso.</h2><p className="mt-6 max-w-xl leading-7 text-white/55">Produção organizada, atenção aos detalhes e instalação profissional para que cada solução chegue ao ambiente com o acabamento que o projeto merece.</p><div className="mt-8 grid gap-4 sm:grid-cols-3"><div><Factory size={20}/><p className="mt-3 text-sm font-semibold">Produção organizada</p></div><div><Ruler size={20}/><p className="mt-3 text-sm font-semibold">Sob medida</p></div><div><ShieldCheck size={20}/><p className="mt-3 text-sm font-semibold">Instalação</p></div></div></div>
-        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10"><Image src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1400&q=85" alt="Ambiente de produção" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover"/></div>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10"><Image src="https://static.wixstatic.com/media/668363_82520cbf1a8943599d926494b9eaf02b~mv2.jpg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Decortini_02---02.jpg" alt="Ambiente de produção" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover"/></div>
       </div>
     </section>
 
