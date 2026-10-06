@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ArrowUpRight, ChevronDown, Instagram, MapPin, MessageCircle, Phone, Ruler, ShieldCheck, Factory, Sparkles, X } from "lucide-react";
-import { FloatingPathsBackground } from "@/components/ui/floating-paths";
 import ScrollBaseAnimation from "@/components/ui/scroll-text-marquee";
 
 const WHATSAPP = "5562993543196";
@@ -49,7 +48,7 @@ export default function Home() {
 
   return <main className="min-h-screen bg-[#050505] text-white">
     <section className="relative min-h-[92vh] overflow-hidden border-b border-white/10">
-      <FloatingPathsBackground position={-1} className="min-h-[92vh]">
+      <div className="min-h-[92vh]">
         <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
           <div className="text-xl font-black tracking-[.18em]">PERSIART</div>
           <a href={quote("um produto")} className="rounded-full border border-emerald-400/30 bg-emerald-500/10 px-5 py-2 text-sm font-semibold text-emerald-300 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,.15),0_8px_30px_rgba(16,185,129,.12)] transition hover:bg-emerald-500/20">Orçamento</a>
@@ -65,7 +64,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </FloatingPathsBackground>
+      </div>
     </section>
 
     <section className="border-b border-white/10 py-7 text-white/20"><ScrollBaseAnimation baseVelocity={-3}>CORTINAS • PERSIANAS • TOLDOS • AUTOMAÇÃO • CONFORTO • DESIGN • </ScrollBaseAnimation></section>
