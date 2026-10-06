@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, ChevronDown, Instagram, MapPin, MessageCircle, Phone, Ruler, ShieldCheck, Factory, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Instagram, MapPin, MessageCircle, Phone, Ruler, ShieldCheck, Factory, Sparkles, X } from "lucide-react";
 import { FloatingPathsBackground } from "@/components/ui/floating-paths";
 import ScrollBaseAnimation from "@/components/ui/scroll-text-marquee";
 
@@ -71,10 +71,10 @@ export default function Home() {
     <section className="border-b border-white/10 py-7 text-white/20"><ScrollBaseAnimation baseVelocity={-3}>CORTINAS • PERSIANAS • TOLDOS • AUTOMAÇÃO • CONFORTO • DESIGN • </ScrollBaseAnimation></section>
 
     <section id="produtos" className="mx-auto max-w-7xl px-6 py-24">
-      <div className="mb-12 max-w-2xl"><p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Soluções</p><h2 className="text-4xl font-black tracking-tight sm:text-6xl">Produtos para cada ambiente.</h2><p className="mt-5 text-white/50">Fale com a equipe e envie as medidas do espaço para receber seu orçamento.</p></div>
+      <div className="mx-auto mb-12 max-w-3xl text-center"><p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Soluções</p><h2 className="text-4xl font-black tracking-tight sm:text-6xl">Produtos para cada ambiente.</h2><p className="mx-auto mt-5 max-w-2xl text-white/50">Fale com a equipe e envie as medidas do espaço para receber seu orçamento.</p></div>
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {products.map(([name, desc, image], i) => <article key={name} className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[.03]">
-          <div className="relative aspect-square overflow-hidden"><Image src={image} alt={name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-700 group-hover:scale-105"/></div>
+          <div className="relative aspect-square overflow-hidden"><Image src={image} alt={name} fill sizes="(max-width: 768px) 100vw, 33vw" className="product-image-pan object-cover transition duration-700 group-hover:scale-105"/></div>
           <div className="p-6"><p className="mb-2 text-xs text-white/35">0{i+1}</p><h3 className="text-2xl font-bold">{name}</h3><p className="mt-3 min-h-14 text-sm leading-6 text-white/50">{desc}</p><button type="button" onClick={() => setSelectedProduct(i)} className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-5 py-2.5 text-sm font-bold text-emerald-200 backdrop-blur-xl transition hover:bg-emerald-500/20">Descrição <ArrowUpRight size={16}/></button><a href={quote(name)} className="ml-2 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-sm font-bold text-emerald-200 backdrop-blur-xl transition hover:bg-emerald-500/20">Orçamento <ArrowUpRight size={16}/></a></div>
         </article>)}
       </div>
@@ -108,7 +108,7 @@ export default function Home() {
     </section>
 
     <section className="mx-auto max-w-7xl px-6 py-24">
-      <div className="mb-10"><p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Confiança</p><h2 className="text-4xl font-black sm:text-5xl">Seu projeto, do jeito certo.</h2></div>
+      <div className="mx-auto mb-10 max-w-3xl text-center"><p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Confiança</p><h2 className="text-4xl font-black sm:text-5xl">Seu projeto, do jeito certo.</h2></div>
       <div className="grid gap-4 md:grid-cols-3"><div className="rounded-3xl border border-white/10 p-7"><Ruler/><h3 className="mt-6 text-xl font-bold">Sob medida</h3><p className="mt-2 text-white/45">A solução é pensada para as dimensões e necessidades do seu ambiente.</p></div><div className="rounded-3xl border border-white/10 p-7"><ShieldCheck/><h3 className="mt-6 text-xl font-bold">Instalação profissional</h3><p className="mt-2 text-white/45">Mais segurança no processo e melhor acabamento na entrega.</p></div><div className="rounded-3xl border border-white/10 p-7"><Sparkles/><h3 className="mt-6 text-xl font-bold">Atendimento personalizado</h3><p className="mt-2 text-white/45">Você fala com a equipe para encontrar a opção ideal.</p></div></div>
     </section>
 
