@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, ChevronDown, Instagram, MapPin, MessageCircle, Phone, Mail, Star, Ruler, ShieldCheck, Factory, Sparkles } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Instagram, MapPin, MessageCircle, Phone, Ruler, ShieldCheck, Factory, Sparkles, X } from "lucide-react";
 import { FloatingPathsBackground } from "@/components/ui/floating-paths";
 import ScrollBaseAnimation from "@/components/ui/scroll-text-marquee";
 
@@ -20,6 +20,18 @@ const products = [
   ["Persianas horizontais em alumínio", "Praticidade, resistência e controle preciso da entrada de luz.", "https://product-hub-prd.madeiramadeira.com.br/241543530/images/0b4ac784-21cb-40f0-82b5-c81ea75f35306b7ed4ffff4c1747340302649.jpeg"]
 ] as const;
 
+const productDetails = [
+  ["Motorização para cortina", "Mais conforto e praticidade para abrir e fechar suas cortinas. Pode ser uma ótima solução para janelas maiores, ambientes de difícil acesso e projetos que buscam automação.", "Controle motorizado, praticidade, conforto e integração ao ambiente."],
+  ["Persianas rolô", "Solução moderna e versátil para controlar a entrada de luz e aumentar a privacidade. Disponível em diferentes tecidos, níveis de transparência e acabamentos.", "Controle de luminosidade, privacidade, visual minimalista e fabricação sob medida."],
+  ["Romana", "Modelo com dobras horizontais que cria um visual elegante e sofisticado. Combina com projetos residenciais e comerciais e pode receber diferentes tipos de tecido.", "Elegância, acabamento sofisticado, controle de luz e opções de tecido."],
+  ["Double Vision", "Alterna faixas translúcidas e opacas, permitindo regular a luminosidade e a privacidade sem precisar abrir completamente a persiana.", "Regulagem de luz, privacidade, design contemporâneo e praticidade."],
+  ["Cortinas tradicionais de tecido", "Uma solução clássica para trazer aconchego e personalidade ao ambiente. Pode ser produzida em diferentes tecidos, cores, forros e acabamentos.", "Conforto visual, variedade de tecidos, acabamento personalizado e elegância."],
+  ["Toldos verticais", "Indicados para proteção solar e privacidade em áreas externas ou ambientes que recebem muita incidência de luz. O projeto é definido de acordo com o espaço.", "Proteção solar, privacidade, aplicação externa e fabricação sob medida."],
+  ["Toldo vertical braço pivotante", "Sistema com braços articulados que permite posicionar a proteção de acordo com a necessidade do ambiente, unindo funcionalidade e acabamento.", "Proteção solar, braços articulados, praticidade e acabamento."],
+  ["Sun Sheer", "Tecido técnico que ajuda a controlar a incidência solar mantendo uma aparência leve e contemporânea. Uma opção para quem busca equilíbrio entre iluminação e proteção.", "Proteção solar, luminosidade controlada, leveza e design moderno."],
+  ["Persianas horizontais em alumínio", "Modelo resistente e prático, com lâminas que permitem ajustar a entrada de luz e a privacidade com precisão.", "Resistência, fácil limpeza, controle de luz e ajuste de privacidade."]
+] as const;
+
 const faqs = [
   ["Vocês fazem produtos sob medida?", "Sim. O orçamento é calculado de acordo com as medidas e características do seu ambiente."],
   ["Como peço um orçamento?", "Escolha o produto, informe largura e altura aproximadas e fale com a equipe pelo WhatsApp."],
@@ -33,6 +45,8 @@ function quote(product: string) {
 
 export default function Home() {
   const [open, setOpen] = useState<number | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<number | null>(null);
+
   return <main className="min-h-screen bg-[#050505] text-white">
     <section className="relative min-h-[92vh] overflow-hidden border-b border-white/10">
       <FloatingPathsBackground position={-1} className="min-h-[92vh]">
@@ -60,11 +74,31 @@ export default function Home() {
       <div className="mb-12 max-w-2xl"><p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Soluções</p><h2 className="text-4xl font-black tracking-tight sm:text-6xl">Produtos para cada ambiente.</h2><p className="mt-5 text-white/50">Fale com a equipe e envie as medidas do espaço para receber seu orçamento.</p></div>
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {products.map(([name, desc, image], i) => <article key={name} className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[.03]">
-          <div className="relative aspect-[4/3] overflow-hidden"><Image src={image} alt={name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-700 group-hover:scale-105"/></div>
-          <div className="p-6"><p className="mb-2 text-xs text-white/35">0{i+1}</p><h3 className="text-2xl font-bold">{name}</h3><p className="mt-3 min-h-14 text-sm leading-6 text-white/50">{desc}</p><a href={quote(name)} className="mt-6 inline-flex items-center gap-2 font-bold underline decoration-white/20 underline-offset-4">Pedir orçamento <ArrowUpRight size={16}/></a></div>
+          <div className="relative aspect-square overflow-hidden"><Image src={image} alt={name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition duration-700 group-hover:scale-105"/></div>
+          <div className="p-6"><p className="mb-2 text-xs text-white/35">0{i+1}</p><h3 className="text-2xl font-bold">{name}</h3><p className="mt-3 min-h-14 text-sm leading-6 text-white/50">{desc}</p><button type="button" onClick={() => setSelectedProduct(i)} className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-sm font-bold transition hover:bg-white hover:text-black">Descrição <ArrowUpRight size={16}/></button><a href={quote(name)} className="ml-2 inline-flex items-center gap-2 text-sm font-bold underline decoration-white/20 underline-offset-4">Orçamento <ArrowUpRight size={16}/></a></div>
         </article>)}
       </div>
     </section>
+
+    {selectedProduct !== null && <div className="fixed inset-0 z-[100] overflow-y-auto bg-black/80 px-4 py-8 backdrop-blur-sm" onMouseDown={(e) => { if (e.target === e.currentTarget) setSelectedProduct(null); }}>
+      <div role="dialog" aria-modal="true" aria-label={products[selectedProduct][0]} className="mx-auto w-full max-w-5xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0b0b] shadow-2xl">
+        <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
+          <div><p className="text-xs uppercase tracking-[.25em] text-white/35">Detalhes do produto</p><h2 className="mt-1 text-2xl font-black sm:text-3xl">{products[selectedProduct][0]}</h2></div>
+          <button type="button" aria-label="Fechar descrição" onClick={() => setSelectedProduct(null)} className="grid h-11 w-11 place-items-center rounded-full border border-white/10 text-white/70 transition hover:bg-white hover:text-black"><X size={20}/></button>
+        </div>
+        <div className="grid lg:grid-cols-2">
+          <div className="relative min-h-[320px] bg-black sm:min-h-[480px]"><Image src={products[selectedProduct][2]} alt={products[selectedProduct][0]} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain p-5"/></div>
+          <div className="p-7 sm:p-10">
+            <p className="text-sm leading-7 text-white/60">{productDetails[selectedProduct][1]}</p>
+            <div className="mt-8 rounded-2xl border border-white/10 bg-white/[.03] p-5">
+              <p className="text-xs font-bold uppercase tracking-[.2em] text-white/35">Informações</p>
+              <p className="mt-3 text-sm leading-6 text-white/65">{productDetails[selectedProduct][2]}</p>
+            </div>
+            <a href={quote(products[selectedProduct][0])} className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-bold text-black">Solicitar orçamento <MessageCircle size={18}/></a>
+          </div>
+        </div>
+      </div>
+    </div>}
 
     <section className="border-y border-white/10 bg-white/[.03]">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2">
