@@ -51,7 +51,9 @@ export default function Home() {
       <div className="min-h-[92vh]">
         <nav className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
           <div className="mx-auto flex max-w-7xl items-center gap-2 rounded-2xl border border-white/10 bg-black/45 px-3 py-2.5 backdrop-blur-2xl shadow-[inset_0_1px_0_rgba(255,255,255,.12),0_12px_40px_rgba(0,0,0,.25)] sm:gap-3 sm:px-4">
-            <div className="shrink-0 px-2 text-lg font-black tracking-[.18em] sm:text-xl">PERSIART</div>
+            <div className="relative h-9 w-[150px] shrink-0 sm:h-10 sm:w-[170px]">
+              <Image src="https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/IMG_1205.png" alt="Persiart" fill priority sizes="170px" className="object-contain object-left"/>
+            </div>
             <a href={quote("um produto")} className="rounded-full border border-emerald-300/30 bg-emerald-500/80 px-3.5 py-2 text-xs font-bold text-white backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,.25),0_6px_20px_rgba(16,185,129,.16)] transition hover:bg-emerald-500 sm:px-5 sm:py-2.5 sm:text-sm">Solicitar orçamento</a>
           </div>
         </nav>
