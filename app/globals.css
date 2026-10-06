@@ -6,3 +6,18 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; background: #050505; color: #f5f5f5; }
 ::selection { background: #fff; color: #000; }
+
+
+@keyframes product-image-pan {
+  0% { transform: scale(1.035) translate3d(0, -1.2%, 0); }
+  50% { transform: scale(1.055) translate3d(0, 0.8%, 0); }
+  100% { transform: scale(1.035) translate3d(0, -1.2%, 0); }
+}
+
+.product-image-pan {
+  animation: product-image-pan 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-image-pan { animation: none; }
+}
