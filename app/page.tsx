@@ -84,6 +84,23 @@ export default function Home() {
 
     <section className="border-b border-white/10 py-7 text-white/20"><ScrollBaseAnimation baseVelocity={-3}>CORTINAS • PERSIANAS • TOLDOS • AUTOMAÇÃO • CONFORTO • DESIGN • </ScrollBaseAnimation></section>
 
+    <section className="relative min-h-[68vh] overflow-hidden border-y border-white/10 bg-black">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: "url('https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/IMGFEITOS.jpg')" }}
+      />
+      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/25 to-black/70" />
+      <div className="relative z-10 mx-auto flex min-h-[68vh] max-w-7xl items-end px-6 pb-16 pt-28 sm:pb-20">
+        <div className="max-w-3xl">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[.35em] text-white/60">Persiart • Sob medida</p>
+          <h2 className="text-5xl font-black leading-[.92] tracking-[-.05em] sm:text-7xl lg:text-[6.5rem]">Luz.<br/>Conforto.<br/><span className="text-white/45">Privacidade.</span></h2>
+          <p className="mt-7 max-w-xl text-base leading-7 text-white/70 sm:text-lg">Uma solução pensada para o ambiente, com medidas precisas, acabamento e instalação profissional.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="produtos" className="mx-auto max-w-7xl px-6 py-24">
       <div className="mx-auto mb-12 max-w-3xl text-center"><div className="relative mx-auto mb-8 h-12 w-72">{brandMark("inset-0")}<span className="absolute left-1/2 top-6 -translate-x-1/2 bg-[#050505] px-4 text-[10px] font-bold uppercase tracking-[.35em] text-white/35">Soluções</span></div><h2 className="text-4xl font-black tracking-tight sm:text-6xl">Produtos para cada ambiente.</h2><p className="mx-auto mt-5 max-w-2xl text-white/50">Fale com a equipe e envie as medidas do espaço para receber seu orçamento.</p></div>
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -151,6 +168,24 @@ export default function Home() {
     <section className="mx-auto max-w-7xl px-6 py-24"><div className="mx-auto mb-10 max-w-3xl text-center"><div className="relative mx-auto mb-8 h-12 w-72"><span className="absolute left-1/2 top-0 h-px w-full -translate-x-1/2 bg-white/20"/><span className="absolute left-1/2 top-0 h-8 w-px -translate-x-1/2 bg-white/20"/><span className="absolute left-1/2 top-4 -translate-x-1/2 bg-[#050505] px-4 text-[9px] font-bold uppercase tracking-[.3em] text-white/30">Persiart</span></div><p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Confiança</p><h2 className="text-4xl font-black sm:text-5xl">Seu projeto, do jeito certo.</h2></div><div className="grid gap-4 md:grid-cols-3"><div className="rounded-3xl border border-white/10 p-7"><h3 className="mt-6 text-xl font-bold">Sob medida</h3><p className="mt-2 text-white/45">A solução é pensada para as dimensões e necessidades do seu ambiente.</p></div><div className="rounded-3xl border border-white/10 p-7"><h3 className="mt-6 text-xl font-bold">Instalação profissional</h3><p className="mt-2 text-white/45">Mais segurança no processo e melhor acabamento na entrega.</p></div><div className="rounded-3xl border border-white/10 p-7"><h3 className="mt-6 text-xl font-bold">Atendimento personalizado</h3><p className="mt-2 text-white/45">Você fala com a equipe para encontrar a opção ideal.</p></div></div></section>
 
     <section className="border-y border-white/10 bg-white/[.03]"><div className="mx-auto max-w-4xl px-6 py-24"><div className="relative mb-8 h-12 w-72"><span className="absolute left-1/2 top-0 h-px w-full -translate-x-1/2 bg-white/20"/><span className="absolute left-1/2 top-0 h-8 w-px -translate-x-1/2 bg-white/20"/><span className="absolute left-1/2 top-4 -translate-x-1/2 bg-[#0b0b0b] px-4 text-[9px] font-bold uppercase tracking-[.3em] text-white/30">Persiart</span></div><p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Dúvidas</p><h2 className="mb-10 text-4xl font-black sm:text-5xl">Perguntas frequentes.</h2>{faqs.map(([q,a],i)=><div key={q} className="border-t border-white/10"><button onClick={()=>setOpen(open===i?null:i)} className="flex w-full items-center justify-between py-6 text-left text-lg font-semibold">{q}<ChevronDown className={open===i?"rotate-180 transition":"transition"} size={20}/></button>{open===i&&<p className="pb-6 pr-10 leading-7 text-white/50">{a}</p>}</div>)}</div></section>
+
+    <section className="relative min-h-[62vh] overflow-hidden border-y border-white/10 bg-black">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: "url('https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/IMGFEITOS03.jpg')" }}
+      />
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/40" />
+      <div className="relative z-10 mx-auto flex min-h-[62vh] max-w-7xl items-center px-6 py-24">
+        <div className="max-w-3xl">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[.35em] text-white/55">Seu ambiente merece mais</p>
+          <h2 className="text-5xl font-black leading-[.94] tracking-[-.05em] sm:text-7xl lg:text-[6rem]">Do projeto<br/><span className="text-white/45">ao resultado.</span></h2>
+          <p className="mt-7 max-w-xl text-base leading-7 text-white/70 sm:text-lg">Conte o que você precisa. A Persiart transforma medidas e necessidades em uma solução feita para o seu espaço.</p>
+          <a href={quote("um produto")} className="mt-8 inline-flex items-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-500/85 px-6 py-3.5 font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,.35),0_10px_35px_rgba(16,185,129,.2)] transition hover:bg-emerald-500">Solicitar orçamento <MessageCircle size={18}/></a>
+        </div>
+      </div>
+    </section>
 
     <section className="mx-auto max-w-7xl px-6 py-24"><div className="rounded-[2rem] border border-white/10 bg-white px-7 py-12 text-black sm:px-12"><div className="flex flex-col justify-between gap-8 md:flex-row md:items-end"><div><p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-black/40">Vamos conversar</p><h2 className="max-w-2xl text-4xl font-black tracking-tight sm:text-6xl">Tem uma janela esperando por uma solução?</h2></div><a href={quote("um produto")} className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-500/80 px-6 py-3 font-bold text-white backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,.35),0_10px_35px_rgba(16,185,129,.2)]">Falar no WhatsApp <MessageCircle size={18}/></a></div></div></section>
 
