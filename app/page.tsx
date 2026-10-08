@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, ChevronDown, Instagram, MapPin, MessageCircle, Phone, Factory, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Instagram, MapPin, MessageCircle, Phone, Ruler, ShieldCheck, Factory, Sparkles, X } from "lucide-react";
 import ScrollBaseAnimation from "@/components/ui/scroll-text-marquee";
 
 const WHATSAPP = "5562993543196";
