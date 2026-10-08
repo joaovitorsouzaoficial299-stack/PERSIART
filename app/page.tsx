@@ -166,6 +166,13 @@ export default function Home() {
       </div>
     </section>
 
+    {selectedProduct !== null && selectedProduct >= 100 && <div className="fixed inset-0 z-[100] overflow-y-auto bg-black/90 px-4 py-8 backdrop-blur-sm" onMouseDown={(e) => { if (e.target === e.currentTarget) setSelectedProduct(null); }}>
+      <div role="dialog" aria-modal="true" className="mx-auto w-full max-w-5xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0b0b] shadow-2xl">
+        <div className="flex items-center justify-between border-b border-white/10 px-6 py-5"><div><p className="text-xs uppercase tracking-[.25em] text-white/35">Persiart</p><h2 className="mt-1 text-2xl font-black sm:text-3xl">Projeto sob medida</h2></div><button type="button" aria-label="Fechar imagem" onClick={() => setSelectedProduct(null)} className="grid h-11 w-11 place-items-center rounded-full border border-white/10 text-white/70 transition hover:bg-white hover:text-black"><X size={20}/></button></div>
+        <div className="relative min-h-[55vh] bg-black"><Image src={`https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/${["IMGFEITOS.jpg","IMGFEITOS01.jpg","IMGFEITOS02.jpg","IMGFEITOS03.jpg","IMGFEITOS04.jpg"][selectedProduct - 100]}`} alt="Projeto Persiart" fill sizes="100vw" className="object-contain p-4 sm:p-8"/></div>
+        <div className="border-t border-white/10 p-7 sm:p-10"><p className="text-xs font-bold uppercase tracking-[.25em] text-white/35">Persiart</p><h3 className="mt-3 text-3xl font-black">Fabricação e instalação sob medida</h3><p className="mt-3 max-w-3xl leading-7 text-white/55">Projeto realizado pela Persiart, com solução pensada para o ambiente, medidas e acabamento desejado.</p></div>
+      </div>
+    </div>}
     {selectedProduct !== null && selectedProduct < products.length && <div className="fixed inset-0 z-[100] overflow-y-auto bg-black/80 px-4 py-8 backdrop-blur-sm" onMouseDown={(e) => { if (e.target === e.currentTarget) setSelectedProduct(null); }}>
       <div role="dialog" aria-modal="true" aria-label={products[selectedProduct][0]} className="mx-auto w-full max-w-5xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0b0b] shadow-2xl">
         <div className="flex items-center justify-between border-b border-white/10 px-6 py-5"><div><p className="text-xs uppercase tracking-[.25em] text-white/35">Detalhes do produto</p><h2 className="mt-1 text-2xl font-black sm:text-3xl">{products[selectedProduct][0]}</h2></div><button type="button" aria-label="Fechar descrição" onClick={() => setSelectedProduct(null)} className="grid h-11 w-11 place-items-center rounded-full border border-white/10 text-white/70 transition hover:bg-white hover:text-black"><X size={20}/></button></div>
