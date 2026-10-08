@@ -109,44 +109,68 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-24 border-y border-white/10 bg-white/[.03] py-24">
+      <section className="mt-24 border-y border-white/10 bg-white/[.02] py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Detalhes técnicos</p>
-            <h2 className="text-4xl font-black tracking-tight sm:text-6xl">Qualidade nos componentes.</h2>
-            <p className="mx-auto mt-5 max-w-2xl text-white/50">Materiais, acabamento e tecnologia que fazem parte das soluções Persiart.</p>
+          <div className="grid items-end gap-10 lg:grid-cols-[.8fr_1.2fr]">
+            <div>
+              <p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Detalhes técnicos</p>
+              <h2 className="text-4xl font-black tracking-tight sm:text-6xl">Qualidade nos componentes.</h2>
+              <p className="mt-6 max-w-xl leading-7 text-white/50">Cada detalhe foi pensado para entregar acabamento, resistência e funcionamento preciso. Conheça os materiais que fazem parte das soluções Persiart.</p>
+            </div>
+            <div className="relative aspect-[16/8] overflow-hidden rounded-[2rem] border border-white/10">
+              <Image unoptimized src="https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/Componentes%20.jpg" alt="Componentes das soluções Persiart" fill sizes="(max-width: 1024px) 100vw, 70vw" className="object-cover transition duration-700 hover:scale-[1.02]" />
+              <button type="button" onClick={() => setSelectedProduct(200)} className="absolute bottom-5 right-5 rounded-full border border-white/20 bg-black/60 px-5 py-3 text-sm font-bold backdrop-blur transition hover:bg-white hover:text-black">Ver componentes ↗</button>
+            </div>
           </div>
-          <div className="grid gap-5 lg:grid-cols-2">
-            <button type="button" onClick={() => setSelectedProduct(200)} className="group overflow-hidden rounded-3xl border border-white/10 bg-black/30 text-left">
-              <div className="relative aspect-[16/10]"><Image src="https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/Componentes%20.jpg" alt="Componentes das soluções Persiart" fill sizes="(max-width: 1024px) 100vw, 50vw" unoptimized className="object-cover transition duration-700 group-hover:scale-105"/></div>
-              <div className="p-7"><p className="text-xs font-bold uppercase tracking-[.25em] text-white/35">Persiart</p><h3 className="mt-3 text-2xl font-black">Acabamento e construção.</h3><p className="mt-3 leading-7 text-white/55">Tecidos PVC e Screen soldados, braços articulados em alumínio, manivela com gancho de inox, tampas de acabamento e parafusos em inox.</p><p className="mt-5 text-sm font-bold text-white/70">Clique para ampliar →</p></div>
-            </button>
-            <button type="button" onClick={() => setSelectedProduct(201)} className="group overflow-hidden rounded-3xl border border-white/10 bg-black/30 text-left">
-              <div className="relative aspect-[16/10]"><Image src="https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/Motorizac%CC%A7a%CC%83o%20.jpg" alt="Motorização Persiart" fill sizes="(max-width: 1024px) 100vw, 50vw" unoptimized className="object-cover transition duration-700 group-hover:scale-105"/></div>
-              <div className="p-7"><p className="text-xs font-bold uppercase tracking-[.25em] text-white/35">Persiart</p><h3 className="mt-3 text-2xl font-black">Conforto com tecnologia.</h3><p className="mt-3 leading-7 text-white/55">Motor tubular com receptor embutido, ajuste eletrônico, sensor de vento e emissores de 1 e 15 canais.</p><p className="mt-5 text-sm font-bold text-white/70">Clique para ampliar →</p></div>
-            </button>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Tecidos soldados", "PVC e Screen com acabamento fosco e solda sem brilho."],
+              ["Braços articulados", "Alumínio com pintura eletrostática e tração por cinta flexível."],
+              ["Manivela em alumínio", "Gancho em inox para resistência e praticidade."],
+              ["Parafusos em inox", "Mais resistência à ferrugem e à corrosão."]
+            ].map(([title, desc]) => (
+              <div key={title} className="border-t border-white/10 pt-5">
+                <h3 className="text-lg font-bold">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-white/45">{desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 grid items-center gap-8 border-t border-white/10 pt-12 lg:grid-cols-[1.1fr_.9fr]">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-[2rem] border border-white/10">
+              <Image unoptimized src="https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/Motorizac%CC%A7a%CC%83o%20.jpg" alt="Motorização Persiart" fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover transition duration-700 hover:scale-[1.02]" />
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[.3em] text-white/40">Motorização</p>
+              <h3 className="mt-3 text-3xl font-black">Conforto com tecnologia.</h3>
+              <p className="mt-4 leading-7 text-white/50">Motor tubular com receptor embutido, ajuste eletrônico, sensor de vento e emissores de 1 e 15 canais.</p>
+              <button type="button" onClick={() => setSelectedProduct(201)} className="mt-6 text-sm font-bold text-white/75 transition hover:text-white">Ampliar imagem →</button>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="mt-24 border-y border-white/10 py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto mb-12 max-w-3xl text-center">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Linha de toldos</p>
-            <h2 className="text-4xl font-black tracking-tight sm:text-6xl">Proteção que se adapta.</h2>
-            <p className="mx-auto mt-5 max-w-2xl text-white/50">Conheça algumas das configurações de toldos apresentadas pela Persiart.</p>
+          <div className="grid items-end gap-10 lg:grid-cols-[.7fr_1.3fr]">
+            <div>
+              <p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Linha de toldos</p>
+              <h2 className="text-4xl font-black tracking-tight sm:text-6xl">Proteção que se adapta.</h2>
+              <p className="mt-6 max-w-xl leading-7 text-white/50">Soluções pensadas para diferentes alturas, passagens, varandas, áreas de lazer e grandes dimensões.</p>
+            </div>
+            <button type="button" onClick={() => setSelectedProduct(210)} className="group relative aspect-[16/8] overflow-hidden rounded-[2rem] border border-white/10 text-left">
+              <Image unoptimized src="https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/Toldo.jpg" alt="Toldos Persiart" fill sizes="(max-width: 1024px) 100vw, 70vw" className="object-cover transition duration-700 group-hover:scale-[1.02]" />
+              <span className="absolute bottom-5 left-5 rounded-full bg-black/60 px-5 py-3 text-sm font-bold backdrop-blur">Toldo Basic e Balcone ↗</span>
+            </button>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {[
-              ["Toldos", "Toldo Basic e Toldo Balcone: soluções práticas para diferentes alturas, passagens, varandas e áreas de lazer.", "Toldo.jpg"],
-              ["Toldo Bip Screen", "Guias laterais e sistema de corrente com acabamento box para mais segurança, praticidade e conforto.", "Toldo bip screen.jpg"],
-              ["Qualidade em toldos", "Soluções manuais e motorizadas para proteção solar com diferentes possibilidades de aplicação.", "Qualidade em toldos manuais e motorizados.jpg"]
-            ].map(([title, desc, file], i) => (
-              <button key={title} type="button" onClick={() => setSelectedProduct(210 + i)} className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[.03] text-left">
-                <div className="relative aspect-[4/3]"><Image src={`https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/${file === "Toldo.jpg" ? "Toldo.jpg" : file === "Toldo bip screen.jpg" ? "Toldo%20bip%20screen.jpg" : "Qualidade%20em%20toldos%20manuais%20e%20motorizados.jpg"}`} alt={title} fill sizes="(max-width: 768px) 100vw, 33vw" unoptimized className="object-cover transition duration-700 group-hover:scale-105"/></div>
-                <div className="p-6"><h3 className="text-2xl font-bold">{title}</h3><p className="mt-3 text-sm leading-6 text-white/50">{desc}</p><p className="mt-5 text-sm font-bold text-white/70">Clique para ampliar →</p></div>
-              </button>
-            ))}
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            <button type="button" onClick={() => setSelectedProduct(211)} className="group relative aspect-[16/9] overflow-hidden rounded-[2rem] border border-white/10 text-left">
+              <Image unoptimized src="https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/Toldo%20bip%20screen.jpg" alt="Toldo Bip Screen Persiart" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition duration-700 group-hover:scale-[1.02]" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-16"><p className="text-xs font-bold uppercase tracking-[.25em] text-white/50">Proteção lateral</p><h3 className="mt-2 text-2xl font-black">Toldo Bip Screen</h3></div>
+            </button>
+            <button type="button" onClick={() => setSelectedProduct(212)} className="group relative aspect-[16/9] overflow-hidden rounded-[2rem] border border-white/10 text-left">
+              <Image unoptimized src="https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/Qualidade%20em%20toldos%20manuais%20e%20motorizados.jpg" alt="Qualidade em toldos Persiart" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition duration-700 group-hover:scale-[1.02]" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-16"><p className="text-xs font-bold uppercase tracking-[.25em] text-white/50">Manuais e motorizados</p><h3 className="mt-2 text-2xl font-black">Qualidade em toldos</h3></div>
+            </button>
           </div>
         </div>
       </section>
