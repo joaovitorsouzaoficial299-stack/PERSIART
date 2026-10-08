@@ -16,7 +16,7 @@ const products = [
   ["Toldos verticais", "Telas verticais para áreas externas, ajudando a filtrar o sol, reduzir o desconforto visual e ampliar a privacidade.", "https://images.homify.com/c_fill%2Cf_auto%2Ch_700%2Cq_auto/v1573858643/p/photo/image/3263197/outdoor-decor-ideas_800x600.jpg"],
   ["Toldo vertical braço pivotante", "Toldo articulado com braços que projetam a cobertura para frente, criando sombra em varandas, fachadas e áreas de convivência.", "https://www.globaltoldos.com.br/toldos-transparentes/imagens/orcamento-de-toldos-bracos-articulados.jpg"],
   ["Sun Sheer", "Tela solar screen que filtra a incidência solar e mantém luminosidade natural, com diferentes fatores de abertura.", "https://swdecor.com.br/image/cache/catalog/produtos/persianas/SCREEN/Screen%20Tela%20Solar%203-1024x768.png"],
-  ["Persianas horizontais em alumínio", "Lâminas de alumínio que permitem ajustar a direção da luz e o nível de privacidade com acionamento simples.", "https://product-hub-prd.madeiramadeira.com.br/286424942/images/f29dd6ed-5b3e-4797-b083-2b0ca03bff8ca9352e9bc8651747419407934.jpeg?bg-color=FFF&canvas=1%3A1&width=620"
+  ["Persianas horizontais em alumínio", "Lâminas de alumínio que permitem ajustar a direção da luz e o nível de privacidade com acionamento simples.", "https://product-hub-prd.madeiramadeira.com.br/286424942/images/f29dd6ed-5b3e-4797-b083-2b0ca03bff8ca9352e9bc8651747419407934.jpeg?bg-color=FFF&canvas=1%3A1&width=620"],
 ] as const;
 
 const productDetails = [
