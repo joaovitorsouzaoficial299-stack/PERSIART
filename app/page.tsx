@@ -93,6 +93,25 @@ export default function Home() {
         </article>)}
       </div>
 
+
+      <section className="mt-24 border-y border-white/10 py-24">
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Projetos reais</p>
+          <h2 className="text-4xl font-black tracking-tight sm:text-6xl">Feito pela Persiart.</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-white/50">Uma seleção de registros reais enviados pela equipe. Aqui você vê ambientes, materiais e instalações antes de falar com a equipe.</p>
+        </div>
+        <div className="grid auto-rows-[220px] grid-cols-2 gap-3 sm:gap-5 md:grid-cols-4 md:auto-rows-[260px]">
+          {[
+            "IMG_1244.jpeg","IMG_1245.jpeg","IMG_1246.jpeg","IMG_1247.jpeg","IMG_1248.jpeg","IMG_1249.jpeg","IMG_1250.jpeg","IMG_1251.jpeg","IMG_1252.jpeg","IMG_1253.jpeg","IMG_1254.jpeg"
+          ].map((file, i) => (
+            <figure key={file} className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[.03] ${i === 0 || i === 5 ? "col-span-2 row-span-2" : ""}`}>
+              <Image src={`https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/${file}`} alt={`Projeto real Persiart ${i + 1}`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-12"><span className="text-[10px] font-bold uppercase tracking-[.25em] text-white/55">Persiart • projeto real</span></div>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       <div className="mx-auto mt-10 max-w-5xl rounded-3xl border border-white/10 bg-white/[.03] p-6 sm:p-8">
         <div className="mb-7"><div className="relative mb-5 h-10 w-64">{brandMark("inset-0")}<span className="absolute left-1/2 top-5 -translate-x-1/2 bg-[#0b0b0b] px-3 text-[9px] font-bold uppercase tracking-[.3em] text-white/35">Orçamento rápido</span></div><h3 className="mt-2 text-2xl font-black sm:text-3xl">Tem a medida? Faça o orçamento rápido.</h3><p className="mt-2 text-sm text-white/45">Preencha os dados abaixo e envie direto para a equipe da Persiart.</p></div>
 
