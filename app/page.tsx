@@ -119,7 +119,7 @@ export default function Home() {
             </div>
             <div className="relative aspect-[16/8] overflow-hidden rounded-[2rem] border border-white/10">
               <Image unoptimized src="https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/Componentes%20.jpg" alt="Componentes das soluções Persiart" fill sizes="(max-width: 1024px) 100vw, 70vw" className="object-cover transition duration-700 hover:scale-[1.02]" />
-              <button type="button" onClick={() => setSelectedProduct(200)} className="absolute bottom-5 right-5 rounded-full border border-white/20 bg-black/60 px-5 py-3 text-sm font-bold backdrop-blur transition hover:bg-white hover:text-black">Ver componentes ↗</button>
+              <a href="/componentes" className="absolute bottom-5 right-5 rounded-full border border-white/20 bg-black/60 px-5 py-3 text-sm font-bold backdrop-blur transition hover:bg-white hover:text-black">Componentes ↗</a>
             </div>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
