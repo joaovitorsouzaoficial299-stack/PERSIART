@@ -81,7 +81,7 @@ export default function Home() {
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {products.map(([name, desc, image], i) => <article key={name} className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[.03]">
           <div className="relative aspect-square overflow-hidden"><Image src={image} alt={name} fill sizes="(max-width: 768px) 100vw, 33vw" className="product-image-pan object-cover transition duration-700 group-hover:scale-105"/></div>
-          <div className="p-6"><p className="mb-2 text-xs text-white/35">0{i+1}</p><h3 className="text-2xl font-bold">{name}</h3><p className="mt-3 min-h-14 text-sm leading-6 text-white/50">{desc}</p><button type="button" onClick={() => setSelectedProduct(i)} className="mt-6 inline-flex items-center gap-2 rounded-full px-0 py-2.5 text-sm font-bold text-white transition hover:text-white/70">Descrição <ArrowUpRight size={16}/></button><a href={quote(name)} className="ml-2 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-sm font-bold text-emerald-200 backdrop-blur-xl transition hover:bg-emerald-500/20">Orçamento <ArrowUpRight size={16}/></a></div>
+          <div className="p-6"><p className="mb-2 text-xs text-white/35">0{i+1}</p><h3 className="text-2xl font-bold">{name}</h3><p className="mt-3 min-h-14 text-sm leading-6 text-white/50">{desc}</p><button type="button" onClick={() => setSelectedProduct(i)} className="mt-6 inline-flex items-center gap-2 rounded-full px-0 py-2.5 text-sm font-bold text-white transition hover:text-white/70">Descrição <ArrowUpRight size={16}/></button></div>
         </article>)}
       </div>
 
@@ -157,15 +157,7 @@ export default function Home() {
           href={quote("um produto")}
           onClick={(e) => {
             const model = quoteModel === "Outros" ? (quoteOtherModel || "Outros") : quoteModel;
-            const text = `Olá! Quero fazer um orçamento rápido na Persiart.
-
-Medidas:
-Largura: ${quoteWidth || "não informada"}
-Altura: ${quoteHeight || "não informada"}
-
-Modelo: ${model}
-Tecido: ${quoteFabric}
-Cor: ${quoteColor || "não informada"}${quoteFabric === "Tela solar" ? `\nTela solar: ${quoteSolar}` : ""}`;
+            const text = `Olá! Quero fazer um orçamento rápido na Persiart.\n\nMedidas:\nLargura: ${quoteWidth || "não informada"}\nAltura: ${quoteHeight || "não informada"}\n\nModelo: ${model}\nTecido: ${quoteFabric}\nCor: ${quoteColor || "não informada"}${quoteFabric === "Tela solar" ? `\nTela solar: ${quoteSolar}` : ""}`;
             e.currentTarget.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
           }}
           className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-500/80 px-6 py-3.5 font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,.35),0_10px_35px_rgba(16,185,129,.2)] transition hover:bg-emerald-500 sm:w-auto"
