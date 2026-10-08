@@ -8,15 +8,15 @@ import ScrollBaseAnimation from "@/components/ui/scroll-text-marquee";
 const WHATSAPP = "5562993543196";
 
 const products = [
-  ["Motorização para cortina", "Automação para abrir, fechar e controlar suas cortinas com mais conforto.", "https://www.vanewijkzonwering.nl/wp-content/uploads/2021/04/Gordijnen-op-maat-bij-Van-Ewijk-Zonwering-in-Lelystad-Dronten-Swifterbant-en-Almere-06-800x535.jpg"],
-  ["Persianas rolô", "Visual limpo, controle de luz e acabamento sob medida para qualquer ambiente.", "https://3325.cdn.simplo7.net/static/3325/sku/por-cor-branco-cortina-rolo-branca-tecido-blackout-colecao-napoles-cor-white--p-1749843149174.jpg"],
-  ["Romana", "Elegância e conforto com tecidos e caimento que valorizam o ambiente.", "https://3325.cdn.simplo7.net/static/3325/sku/romana-tecido-blackout-cortina-romana-blackout-tecido-tj5661--p-1751291816283.jpg"],
-  ["Double Vision", "Faixas translúcidas e opacas para equilibrar privacidade e iluminação.", "https://images.tcdn.com.br/img/img_prod/1175294/persiana_rolo_double_vision_1_80m_x_2_60m_bege_bella_janela_6659_variacao_8323_3_59192d4c8f7e3df58db897b910178e85.jpg"],
-  ["Cortinas tradicionais de tecido", "Soluções clássicas e sofisticadas para projetos residenciais e comerciais.", "https://acdn-us.mitiendanube.com/stores/003/541/884/products/linho-natural-4-adae2f1b01bff2d03b17120553233821-1024-1024.webp"],
-  ["Toldos verticais", "Proteção solar e privacidade com instalação pensada para seu espaço.", "https://media.hornbach.de/mp/packshot/5f1df4b3-87da-4ac3-8d0c-88cf1720ee8d?size=400"],
-  ["Toldo vertical braço pivotante", "Proteção funcional com estrutura e abertura que se adaptam ao ambiente.", "https://shop0662.sfstatic.io/upload_dir/shop/markise-250-x-100-cm-sort-antracit-laeskaerm-laesejl-vertikalmarkise_2.jpg"],
-  ["Sun Sheer", "Leveza, proteção solar e acabamento contemporâneo.", "https://3325.cdn.simplo7.net/static/3325/sku/por-cor-off-white-cortina-rolo-off-white-tecido-tela-solar-colecao-screen-1-cor-white-p-1760731161939.jpg"],
-  ["Persianas horizontais em alumínio", "Praticidade, resistência e controle preciso da entrada de luz.", "https://product-hub-prd.madeiramadeira.com.br/241543530/images/0b4ac784-21cb-40f0-82b5-c81ea75f35306b7ed4ffff4c1747340302649.jpeg"]
+  ["Motorização para cortina", "Cortinas de tecido com acionamento motorizado para abrir e fechar com controle e mais conforto.", "https://image.chukouplus.com/upload/C_5985/file/20260522/a67ec9c7d455b7518501bd208f224f73.jpg?1742418541=&x-oss-process=image%2Fformat%2Cwebp"],
+  ["Persianas rolô", "Modelo de tecido enrolável, disponível em opções translúcidas, tela solar e blackout para diferentes necessidades.", "https://www.facilpersianas.com.br/cdn/shop/files/rolo-blackout_0000_IMG_3920.jpg?v=1723738978&width=1500"],
+  ["Romana", "Persiana com painéis horizontais de tecido que se recolhem em dobras, combinando controle de luz e acabamento elegante.", "https://dukaan.b-cdn.net/1000x1000/webp/media/c24dca83-5f02-4932-a29c-942e1ba9b342.jpg"],
+  ["Double Vision", "Persiana rolô com faixas translúcidas e opacas que permitem alternar iluminação e privacidade sem abrir totalmente o tecido.", "https://cdn.leroymerlin.com.br/products/persiana_double_vision_branca_2%2C20m_x_2%2C80m_1572108126_113a_600x600.jpg"],
+  ["Cortinas tradicionais de tecido", "Cortinas confeccionadas sob medida em tecidos como voil, linho e tecidos encorpados, com diferentes pregas e acabamentos.", "https://d1z3kpk3b2dxg.cloudfront.net/tecidos/glam-areia-20230317260276.jpg?d=800x800"],
+  ["Toldos verticais", "Telas verticais para áreas externas, ajudando a filtrar o sol, reduzir o desconforto visual e ampliar a privacidade.", "https://images.homify.com/c_fill%2Cf_auto%2Ch_700%2Cq_auto/v1573858643/p/photo/image/3263197/outdoor-decor-ideas_800x600.jpg"],
+  ["Toldo vertical braço pivotante", "Toldo articulado com braços que projetam a cobertura para frente, criando sombra em varandas, fachadas e áreas de convivência.", "https://www.globaltoldos.com.br/toldos-transparentes/imagens/orcamento-de-toldos-bracos-articulados.jpg"],
+  ["Sun Sheer", "Tela solar screen que filtra a incidência solar e mantém luminosidade natural, com diferentes fatores de abertura.", "https://swdecor.com.br/image/cache/catalog/produtos/persianas/SCREEN/Screen%20Tela%20Solar%203-1024x768.png"],
+  ["Persianas horizontais em alumínio", "Lâminas de alumínio que permitem ajustar a direção da luz e o nível de privacidade com acionamento simples.", "https://product-hub-prd.madeiramadeira.com.br/286424942/images/f29dd6ed-5b3e-4797-b083-2b0ca03bff8ca9352e9bc8651747419407934.jpeg?bg-color=FFF&canvas=1%3A1&width=620"
 ] as const;
 
 const productDetails = [
