@@ -98,17 +98,57 @@ export default function Home() {
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Projetos reais</p>
           <h2 className="text-4xl font-black tracking-tight sm:text-6xl">Feito pela Persiart.</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-white/50">Uma seleção de registros reais enviados pela equipe. Aqui você vê ambientes, materiais e instalações antes de falar com a equipe.</p>
+          <p className="mx-auto mt-5 max-w-2xl text-white/50">Registros reais de trabalhos realizados pela Persiart, mostrando o resultado final em diferentes ambientes.</p>
         </div>
         <div className="grid auto-rows-[220px] grid-cols-2 gap-3 sm:gap-5 md:grid-cols-4 md:auto-rows-[260px]">
-          {[
-            "IMG_1244.jpeg","IMG_1245.jpeg","IMG_1246.jpeg","IMG_1247.jpeg","IMG_1248.jpeg","IMG_1249.jpeg","IMG_1250.jpeg","IMG_1251.jpeg","IMG_1252.jpeg","IMG_1253.jpeg","IMG_1254.jpeg"
-          ].map((file, i) => (
-            <figure key={file} className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[.03] ${i === 0 || i === 5 ? "col-span-2 row-span-2" : ""}`}>
-              <Image src={`https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/${file}`} alt={`Projeto real Persiart ${i + 1}`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition duration-700 group-hover:scale-105" />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-12"><span className="text-[10px] font-bold uppercase tracking-[.25em] text-white/55">Persiart • projeto real</span></div>
+          {["IMGFEITOS.jpg","IMGFEITOS01.jpg","IMGFEITOS02.jpg","IMGFEITOS03.jpg","IMGFEITOS04.jpg"].map((file, i) => (
+            <figure key={file} className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[.03] ${i === 0 || i === 3 ? "col-span-2 row-span-2" : ""}`}>
+              <Image src={`https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/${file}`} alt={`Resultado real Persiart ${i + 1}`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 pt-12"><span className="text-[10px] font-bold uppercase tracking-[.25em] text-white/55">Persiart • resultado real</span></div>
             </figure>
           ))}
+        </div>
+      </section>
+
+      <section className="mt-24 border-y border-white/10 bg-white/[.03] py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Detalhes técnicos</p>
+            <h2 className="text-4xl font-black tracking-tight sm:text-6xl">Qualidade nos componentes.</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-white/50">Materiais, acabamento e tecnologia que fazem parte das soluções Persiart.</p>
+          </div>
+          <div className="grid gap-5 lg:grid-cols-2">
+            <article className="overflow-hidden rounded-3xl border border-white/10 bg-black/30">
+              <div className="relative aspect-[16/10]"><Image src="https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/Componentes%20.jpg" alt="Componentes das soluções Persiart" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover"/></div>
+              <div className="p-7"><p className="text-xs font-bold uppercase tracking-[.25em] text-white/35">Componentes</p><h3 className="mt-3 text-2xl font-black">Acabamento e construção.</h3><p className="mt-3 leading-7 text-white/55">Tecidos PVC e Screen soldados, braços articulados em alumínio, manivela com gancho de inox, tampas de acabamento e parafusos em inox.</p></div>
+            </article>
+            <article className="overflow-hidden rounded-3xl border border-white/10 bg-black/30">
+              <div className="relative aspect-[16/10]"><Image src="https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/Motorizac%CC%A7a%CC%83o%20.jpg" alt="Motorização Persiart" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover"/></div>
+              <div className="p-7"><p className="text-xs font-bold uppercase tracking-[.25em] text-white/35">Motorização</p><h3 className="mt-3 text-2xl font-black">Conforto com tecnologia.</h3><p className="mt-3 leading-7 text-white/55">Motor tubular com receptor embutido, ajuste eletrônico, sensor de vento e emissores de 1 e 15 canais.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-24 border-y border-white/10 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Linha de toldos</p>
+            <h2 className="text-4xl font-black tracking-tight sm:text-6xl">Proteção que se adapta.</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-white/50">Conheça algumas das configurações de toldos apresentadas pela Persiart.</p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {[
+              ["Toldos", "Toldo Basic e Toldo Balcone: soluções práticas para diferentes alturas, passagens, varandas e áreas de lazer.", "Toldo.jpg"],
+              ["Toldo Bip Screen", "Guias laterais e sistema de corrente com acabamento box para mais segurança, praticidade e conforto.", "Toldo bip screen.jpg"],
+              ["Qualidade em toldos", "Soluções manuais e motorizadas para proteção solar com diferentes possibilidades de aplicação.", "Qualidade em toldos manuais e motorizados.jpg"]
+            ].map(([title, desc, file]) => (
+              <article key={title} className="overflow-hidden rounded-3xl border border-white/10 bg-white/[.03]">
+                <div className="relative aspect-[4/3]"><Image src={`https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/${encodeURIComponent(file).replace(/%2F/g, "/")}`} alt={title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover"/></div>
+                <div className="p-6"><h3 className="text-2xl font-bold">{title}</h3><p className="mt-3 text-sm leading-6 text-white/50">{desc}</p></div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -134,7 +174,7 @@ export default function Home() {
       </div>
     </div>}
 
-    <section className="border-y border-white/10 bg-white/[.03]"><div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2"><div><div className="relative mb-8 h-12 w-64"><span className="absolute left-1/2 top-0 h-px w-full -translate-x-1/2 bg-white/20"/><span className="absolute left-1/2 top-0 h-8 w-px -translate-x-1/2 bg-white/20"/><span className="absolute left-1/2 top-4 -translate-x-1/2 bg-[#0b0b0b] px-3 text-[9px] font-bold uppercase tracking-[.3em] text-white/30">Persiart</span></div><p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Por trás do resultado</p><h2 className="text-4xl font-black tracking-tight sm:text-6xl">Fábrica estruturada.<br/>Acabamento cuidadoso.</h2><p className="mt-6 max-w-xl leading-7 text-white/55">Produção organizada, atenção aos detalhes e instalação profissional para que cada solução chegue ao ambiente com o acabamento que o projeto merece.</p><div className="mt-8 grid gap-4 sm:grid-cols-3"><div><Factory size={20}/><p className="mt-3 text-sm font-semibold">Produção organizada</p></div><div><Ruler size={20}/><p className="mt-3 text-sm font-semibold">Sob medida</p></div><div><ShieldCheck size={20}/><p className="mt-3 text-sm font-semibold">Instalação</p></div></div></div><div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10"><Image src="https://static.wixstatic.com/media/668363_82520cbf1a8943599d926494b9eaf02b~mv2.jpg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Decortini_02---02.jpg" alt="Ambiente de produção" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover"/></div></div></section>
+    <section className="border-y border-white/10 bg-white/[.03]"><div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 lg:grid-cols-2"><div><div className="relative mb-8 h-12 w-64"><span className="absolute left-1/2 top-0 h-px w-full -translate-x-1/2 bg-white/20"/><span className="absolute left-1/2 top-0 h-8 w-px -translate-x-1/2 bg-white/20"/><span className="absolute left-1/2 top-4 -translate-x-1/2 bg-[#0b0b0b] px-3 text-[9px] font-bold uppercase tracking-[.3em] text-white/30">Persiart</span></div><p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Por trás do resultado</p><h2 className="text-4xl font-black tracking-tight sm:text-6xl">Estrutura real.<br/>Resultado cuidadoso.</h2><p className="mt-6 max-w-xl leading-7 text-white/55">Uma empresa estruturada para atender projetos sob medida, com fabricação, materiais selecionados e instalação profissional.</p><div className="mt-8 grid gap-4 sm:grid-cols-3"><div><Factory size={20}/><p className="mt-3 text-sm font-semibold">Produção organizada</p></div><div><Ruler size={20}/><p className="mt-3 text-sm font-semibold">Sob medida</p></div><div><ShieldCheck size={20}/><p className="mt-3 text-sm font-semibold">Instalação</p></div></div></div><div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10"><Image src="https://raw.githubusercontent.com/joaovitorsouzaoficial299-stack/PERSIART/main/Frente%20da%20loja.jpg" alt="Frente da loja Persiart" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover"/></div></div></section>
 
     <section className="mx-auto max-w-7xl px-6 py-24"><div className="mx-auto mb-10 max-w-3xl text-center"><div className="relative mx-auto mb-8 h-12 w-72"><span className="absolute left-1/2 top-0 h-px w-full -translate-x-1/2 bg-white/20"/><span className="absolute left-1/2 top-0 h-8 w-px -translate-x-1/2 bg-white/20"/><span className="absolute left-1/2 top-4 -translate-x-1/2 bg-[#050505] px-4 text-[9px] font-bold uppercase tracking-[.3em] text-white/30">Persiart</span></div><p className="mb-3 text-xs font-bold uppercase tracking-[.3em] text-white/40">Confiança</p><h2 className="text-4xl font-black sm:text-5xl">Seu projeto, do jeito certo.</h2></div><div className="grid gap-4 md:grid-cols-3"><div className="rounded-3xl border border-white/10 p-7"><Ruler/><h3 className="mt-6 text-xl font-bold">Sob medida</h3><p className="mt-2 text-white/45">A solução é pensada para as dimensões e necessidades do seu ambiente.</p></div><div className="rounded-3xl border border-white/10 p-7"><ShieldCheck/><h3 className="mt-6 text-xl font-bold">Instalação profissional</h3><p className="mt-2 text-white/45">Mais segurança no processo e melhor acabamento na entrega.</p></div><div className="rounded-3xl border border-white/10 p-7"><Sparkles/><h3 className="mt-6 text-xl font-bold">Atendimento personalizado</h3><p className="mt-2 text-white/45">Você fala com a equipe para encontrar a opção ideal.</p></div></div></section>
 
