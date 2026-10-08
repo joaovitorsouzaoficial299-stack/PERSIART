@@ -8,7 +8,7 @@ import ScrollBaseAnimation from "@/components/ui/scroll-text-marquee";
 const WHATSAPP = "5562993543196";
 
 const products = [
-  ["Motorização para cortina", "Cortinas de tecido com acionamento motorizado para abrir e fechar com controle e mais conforto.", "https://image.chukouplus.com/upload/C_5985/file/20260522/a67ec9c7d455b7518501bd208f224f73.jpg?1742418541=&x-oss-process=image%2Fformat%2Cwebp"],
+  ["Motorização para persiana", "Persianas com acionamento motorizado para abrir, fechar e controlar a entrada de luz com mais conforto e praticidade.", "https://static.wixstatic.com/media/9594d8_0fe8f26f5c124714a1f9b60dbf4de214~mv2.jpg/v1/fill/w_480%2Ch_480%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/9594d8_0fe8f26f5c124714a1f9b60dbf4de214~mv2.jpg"],
   ["Persianas rolô", "Modelo de tecido enrolável, disponível em opções translúcidas, tela solar e blackout para diferentes necessidades.", "https://www.facilpersianas.com.br/cdn/shop/files/rolo-blackout_0000_IMG_3920.jpg?v=1723738978&width=1500"],
   ["Romana", "Persiana com painéis horizontais de tecido que se recolhem em dobras, combinando controle de luz e acabamento elegante.", "https://dukaan.b-cdn.net/1000x1000/webp/media/c24dca83-5f02-4932-a29c-942e1ba9b342.jpg"],
   ["Double Vision", "Persiana rolô com faixas translúcidas e opacas que permitem alternar iluminação e privacidade sem abrir totalmente o tecido.", "https://cdn.leroymerlin.com.br/products/persiana_double_vision_branca_2%2C20m_x_2%2C80m_1572108126_113a_600x600.jpg"],
@@ -20,7 +20,7 @@ const products = [
 ] as const;
 
 const productDetails = [
-  ["Motorização para cortina", "Mais conforto e praticidade para abrir e fechar suas cortinas. Pode ser uma ótima solução para janelas maiores, ambientes de difícil acesso e projetos que buscam automação.", "Controle motorizado, praticidade, conforto e integração ao ambiente."],
+  ["Motorização para persiana", "A motorização permite abrir, fechar e posicionar a persiana com acionamento remoto, trazendo mais conforto para o dia a dia e praticidade para janelas maiores ou de difícil acesso.", "Motor tubular, tubo/perfil da persiana e componentes de acionamento. Benefícios: conforto, praticidade, controle da luz e possibilidade de automação."],
   ["Persianas rolô", "Solução moderna e versátil para controlar a entrada de luz e aumentar a privacidade. Disponível em diferentes tecidos, níveis de transparência e acabamentos.", "Controle de luminosidade, privacidade, visual minimalista e fabricação sob medida."],
   ["Romana", "Modelo com dobras horizontais que cria um visual elegante e sofisticado. Combina com projetos residenciais e comerciais e pode receber diferentes tipos de tecido.", "Elegância, acabamento sofisticado, controle de luz e opções de tecido."],
   ["Double Vision", "Alterna faixas translúcidas e opacas, permitindo regular a luminosidade e a privacidade sem precisar abrir completamente a persiana.", "Regulagem de luz, privacidade, design contemporâneo e praticidade."],
@@ -45,6 +45,13 @@ function quote(product: string) {
 export default function Home() {
   const [open, setOpen] = useState<number | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<number | null>(null);
+  const [quoteModel, setQuoteModel] = useState("Persiana Rolô");
+  const [quoteOtherModel, setQuoteOtherModel] = useState("");
+  const [quoteWidth, setQuoteWidth] = useState("");
+  const [quoteHeight, setQuoteHeight] = useState("");
+  const [quoteFabric, setQuoteFabric] = useState("Tela solar");
+  const [quoteColor, setQuoteColor] = useState("");
+  const [quoteSolar, setQuoteSolar] = useState("3%");
 
   return <main className="min-h-screen bg-[#050505] text-white">
     <section className="relative min-h-[92vh] overflow-hidden border-b border-white/10">
@@ -74,8 +81,97 @@ export default function Home() {
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {products.map(([name, desc, image], i) => <article key={name} className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[.03]">
           <div className="relative aspect-square overflow-hidden"><Image src={image} alt={name} fill sizes="(max-width: 768px) 100vw, 33vw" className="product-image-pan object-cover transition duration-700 group-hover:scale-105"/></div>
-          <div className="p-6"><p className="mb-2 text-xs text-white/35">0{i+1}</p><h3 className="text-2xl font-bold">{name}</h3><p className="mt-3 min-h-14 text-sm leading-6 text-white/50">{desc}</p><button type="button" onClick={() => setSelectedProduct(i)} className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-5 py-2.5 text-sm font-bold text-emerald-200 backdrop-blur-xl transition hover:bg-emerald-500/20">Descrição <ArrowUpRight size={16}/></button><a href={quote(name)} className="ml-2 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-sm font-bold text-emerald-200 backdrop-blur-xl transition hover:bg-emerald-500/20">Orçamento <ArrowUpRight size={16}/></a></div>
+          <div className="p-6"><p className="mb-2 text-xs text-white/35">0{i+1}</p><h3 className="text-2xl font-bold">{name}</h3><p className="mt-3 min-h-14 text-sm leading-6 text-white/50">{desc}</p><button type="button" onClick={() => setSelectedProduct(i)} className="mt-6 inline-flex items-center gap-2 rounded-full px-0 py-2.5 text-sm font-bold text-white transition hover:text-white/70">Descrição <ArrowUpRight size={16}/></button><a href={quote(name)} className="ml-2 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-sm font-bold text-emerald-200 backdrop-blur-xl transition hover:bg-emerald-500/20">Orçamento <ArrowUpRight size={16}/></a></div>
         </article>)}
+      </div>
+
+      <div className="mx-auto mt-10 max-w-5xl rounded-3xl border border-white/10 bg-white/[.03] p-6 sm:p-8">
+        <div className="mb-7">
+          <p className="text-xs font-bold uppercase tracking-[.25em] text-white/40">Orçamento rápido</p>
+          <h3 className="mt-2 text-2xl font-black sm:text-3xl">Tem a medida? Faça o orçamento rápido.</h3>
+          <p className="mt-2 text-sm text-white/45">Preencha os dados abaixo e envie direto para a equipe da Persiart.</p>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          <label className="block">
+            <span className="mb-2 block text-sm font-semibold text-white/75">Largura</span>
+            <input value={quoteWidth} onChange={(e) => setQuoteWidth(e.target.value)} placeholder="Ex.: 2,00 m" className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none placeholder:text-white/25 focus:border-white/30" />
+          </label>
+          <label className="block">
+            <span className="mb-2 block text-sm font-semibold text-white/75">Altura</span>
+            <input value={quoteHeight} onChange={(e) => setQuoteHeight(e.target.value)} placeholder="Ex.: 1,50 m" className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none placeholder:text-white/25 focus:border-white/30" />
+          </label>
+
+          <label className="block sm:col-span-2">
+            <span className="mb-2 block text-sm font-semibold text-white/75">Modelo</span>
+            <select value={quoteModel} onChange={(e) => setQuoteModel(e.target.value)} className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none focus:border-white/30">
+              <option>Persiana Rolô</option>
+              <option>Persiana Romana</option>
+              <option>Double Vision</option>
+              <option>Persiana Horizontal</option>
+              <option>Sun Sheer / Tela Solar</option>
+              <option>Toldo</option>
+              <option>Cortina de tecido</option>
+              <option>Motorização</option>
+              <option>Outros</option>
+            </select>
+          </label>
+
+          {quoteModel === "Outros" && <label className="block sm:col-span-2">
+            <span className="mb-2 block text-sm font-semibold text-white/75">Qual modelo?</span>
+            <input value={quoteOtherModel} onChange={(e) => setQuoteOtherModel(e.target.value)} placeholder="Digite o modelo que você procura" className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none placeholder:text-white/25" />
+          </label>}
+
+          <div className="sm:col-span-2 rounded-2xl border border-white/10 bg-black/25 p-5">
+            <p className="mb-4 text-sm font-semibold text-white/75">Cor e tecido</p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <label className="block">
+                <span className="mb-2 block text-xs text-white/40">Tecido</span>
+                <select value={quoteFabric} onChange={(e) => setQuoteFabric(e.target.value)} className="w-full rounded-xl border border-white/10 bg-black/50 px-3 py-2.5 text-sm text-white outline-none">
+                  <option>Tela solar</option>
+                  <option>Blackout</option>
+                  <option>Translúcido</option>
+                  <option>Voil</option>
+                  <option>Linho</option>
+                  <option>Outro</option>
+                </select>
+              </label>
+              <label className="block">
+                <span className="mb-2 block text-xs text-white/40">Cor</span>
+                <input value={quoteColor} onChange={(e) => setQuoteColor(e.target.value)} placeholder="Ex.: cinza" className="w-full rounded-xl border border-white/10 bg-black/50 px-3 py-2.5 text-sm text-white outline-none placeholder:text-white/25" />
+              </label>
+              {quoteFabric === "Tela solar" && <label className="block">
+                <span className="mb-2 block text-xs text-white/40">Porcentagem da tela solar</span>
+                <select value={quoteSolar} onChange={(e) => setQuoteSolar(e.target.value)} className="w-full rounded-xl border border-white/10 bg-black/50 px-3 py-2.5 text-sm text-white outline-none">
+                  <option>1%</option>
+                  <option>3%</option>
+                  <option>5%</option>
+                  <option>10%</option>
+                </select>
+              </label>}
+            </div>
+          </div>
+        </div>
+
+        <a
+          href={quote("um produto")}
+          onClick={(e) => {
+            const model = quoteModel === "Outros" ? (quoteOtherModel || "Outros") : quoteModel;
+            const text = `Olá! Quero fazer um orçamento rápido na Persiart.
+
+Medidas:
+Largura: ${quoteWidth || "não informada"}
+Altura: ${quoteHeight || "não informada"}
+
+Modelo: ${model}
+Tecido: ${quoteFabric}
+Cor: ${quoteColor || "não informada"}${quoteFabric === "Tela solar" ? `\nTela solar: ${quoteSolar}` : ""}`;
+            e.currentTarget.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
+          }}
+          className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full border border-emerald-300/30 bg-emerald-500/80 px-6 py-3.5 font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,.35),0_10px_35px_rgba(16,185,129,.2)] transition hover:bg-emerald-500 sm:w-auto"
+        >
+          Enviar <MessageCircle size={18}/>
+        </a>
       </div>
     </section>
 
